@@ -1,0 +1,78 @@
+https://www.hackerrank.com/challenges/library-fine/problem?isFullScreen=true
+
+Mistake --- i was doing jsiki wajah sa answer was coming  129 not 45  is   int a =15 * a-b;    correct version ---- int a = 15 *(a-b );
+
+still 4/17 test cases failed  
+
+correct code ----
+class Result {
+
+    public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+
+        if (y1 > y2) {
+            return 10000;
+        }
+
+        if (y1 < y2) {
+            return 0;
+        }
+
+        if (m1 > m2) {
+            return 500 * (m1 - m2);
+        }
+
+        if (m1 < m2) {
+            return 0;
+        }
+
+        if (d1 > d2) {
+            return 15 * (d1 - d2);
+        }
+
+        return 0;
+    }
+}
+
+
+
+
+my code ---- 
+class Result {
+
+    /*
+     * Complete the 'libraryFine' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER d1
+     *  2. INTEGER m1
+     *  3. INTEGER y1
+     *  4. INTEGER d2
+     *  5. INTEGER m2
+     *  6. INTEGER y2
+     */
+
+    public static int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+        // int fine=1;
+    if(d1<=d2 && m1<=m2 && y1<=y2){
+        return 0;
+    }
+    else if(d1>d2 && m1<=m2 && y1<=y2){
+        int a=15 * (d1-d2);
+        return a;
+    }
+     else if(d1>=d2 && m1>m2 && y1<=y2){
+        int b=500 * (m1-m2);
+        return b;
+    }
+    //  else if(d1>d2 && m1<=m2 && y1<=y2){
+    //     int a=10000;
+       
+    // }
+ return 10000;
+    }
+
+}
+
+
+
