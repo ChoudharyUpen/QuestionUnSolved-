@@ -1,0 +1,39 @@
+https://www.hackerrank.com/challenges/cut-the-sticks/problem?isFullScreen=true
+
+thing to achieve 
+1.find minimum  --- kar lunga ye toh mai 
+2.how to keep traversing it until all elements are 0  -----    
+
+status ---- could not do it 
+muza ye he nahi samaz mai aya kaisa karna hai  --------------> how to keep traversing it until all elements are 0  
+could not  think the logic for it 
+
+that is why question not done 
+
+
+solution by chatgpt ------
+
+class Result {
+
+    public static List<Integer> cutTheSticks(List<Integer> arr) {
+
+        Collections.sort(arr);
+        List<Integer> result = new ArrayList<>();
+
+        int n = arr.size();
+        result.add(n);
+
+        for (int i = 1; i < n; i++) {
+            if (!arr.get(i).equals(arr.get(i - 1))) {
+                result.add(n - i);
+            }
+        }
+
+        return result;
+    }
+
+  }
+
+
+
+
