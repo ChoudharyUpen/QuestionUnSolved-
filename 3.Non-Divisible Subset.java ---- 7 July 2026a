@@ -1,0 +1,78 @@
+Status --- could not solved it because question he daang sa nahi padha question / mai galat smaz gya question ko 
+ was asking for  
+Aisa maximum subset find karo jisme kisi bhi do numbers ka sum k se divisible na ho.
+
+
+but what i was doing -------
+
+Yaani tum valid pairs ki counting kar rahe ho. that on adding gives multiple of 3 
+
+
+
+Correct Solution ----
+class Result {
+
+    public static int nonDivisibleSubset(int k, List<Integer> s) {
+
+        int[] rem = new int[k];
+
+        // Count frequency of each remainder
+        for (int num : s) {
+            rem[num % k]++;
+        }
+
+        int result = 0;
+
+        // Only one element with remainder 0
+        if (rem[0] > 0) {
+            result++;
+        }
+
+        // Compare remainder pairs
+        for (int i = 1; i <= k / 2; i++) {
+
+            // Special case when k is even
+            if (i == k - i) {
+                if (rem[i] > 0)
+                    result++;
+            } else {
+                result += Math.max(rem[i], rem[k - i]);
+            }
+        }
+
+        return result;
+    }
+}
+
+
+
+
+my solution ----
+class Result {
+
+    /*
+     * Complete the 'nonDivisibleSubset' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER k
+     *  2. INTEGER_ARRAY s
+     */
+
+    public static int nonDivisibleSubset(int k, List<Integer> s) {
+        int count=0;
+    for(int i=0;i<s.size()-1;i++){
+        for(int j=i+1;j<s.size();j++){
+            if((s.get(i)+ s.get(j))%k==0){
+                count++;
+            }
+        }
+    }
+    return count;
+
+    }
+
+        }
+
+
+
