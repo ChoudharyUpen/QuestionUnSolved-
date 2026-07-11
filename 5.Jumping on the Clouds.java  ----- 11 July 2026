@@ -1,0 +1,29 @@
+pattern ---
+
+
+status  ---- not able to do i think there way only a little mistake in it because it was not passing one test case 
+0 0 0 1 0 0  for this input when it is reaching second last element then it is searching after 2 and 
+giving error 
+
+
+code written by me 
+class Result {
+
+    public static int jumpingOnClouds(List<Integer> c) {
+    int count=0;
+    int i=0;
+    while(c.size()-2>i){
+        if(c.get(i)== c.get(i+2) ||c.size()){
+           count++;
+           i=i+2;
+        }
+        else if(c.get(i)== c.get(i+1)){
+            count++;
+            i=i+1; 
+        }
+    }
+return count;
+    }
+
+}
+
