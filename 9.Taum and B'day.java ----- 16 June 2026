@@ -1,0 +1,63 @@
+Status ---- could not do it only 1 think conversion ka code rah gya tha means out of 5  ---  1 test case will not pass 
+
+Pattern ----
+
+Your Output (stdout)
+20
+0  (this was the pro)
+12
+35
+12
+Expected Output
+20
+37
+12
+35
+
+my code  corect working code downside of it 
+class Result {
+
+
+    public static long taumBday(int b, int w, int bc, int wc, int z) {
+        long a=0;
+    if(b ==w && bc == wc){
+        a=b *bc+ w*wc;
+        
+    }
+    else if(bc>wc+z) {
+        int d=wc+z;
+        a=b*d+w*wc;
+    }
+    else if(wc>bc+z){
+        int c=bc+z;
+           a=b*bc+w*c;
+    }
+    return a;
+    }
+
+correct code 
+class Result {
+
+    public static long taumBday(int b, int w, int bc, int wc, int z) {
+        long a = 0;
+
+        if (bc > wc + z) {
+            int d = wc + z;
+            a = (long)b * d + (long)w * wc;
+        }
+        else if (wc > bc + z) {
+            int c = bc + z;
+            a = (long)b * bc + (long)w * c;
+        }
+        else {
+            // Normal case (buy both directly)
+            a = (long)b * bc + (long)w * wc;
+        }
+
+        return a;
+    }
+}
+
+
+
+}
