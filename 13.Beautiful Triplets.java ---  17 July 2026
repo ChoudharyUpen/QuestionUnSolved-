@@ -1,0 +1,51 @@
+status --- 
+
+
+
+pattern --- 
+
+
+
+
+code written by me vs code written by chatgpt (this code is correct )
+
+class Result {
+    public static int beautifulTriplets(int d, List<Integer> arr) {
+        int count=0;
+    for(int i=0;i<arr.size()-2;i++){
+        for(int j=i+1;j<arr.size()-1;j++){
+          for(int p=j+1;p<arr.size();p++){ 
+            int s=arr.get(p) -arr.get(j);
+            int q=s - arr.get(i);
+            if(q==d && arr.get(i)<arr.get(j) && arr.get(j)<arr.get(p)){
+                count++;
+            }
+        }
+    }
+
+    }
+    return count;
+
+}
+}
+
+--------------------------------------------------------
+public static int beautifulTriplets(int d, List<Integer> arr) {
+    int count = 0;
+
+    for (int i = 0; i < arr.size() - 2; i++) {
+        for (int j = i + 1; j < arr.size() - 1; j++) {
+            for (int p = j + 1; p < arr.size(); p++) {
+
+                if (arr.get(j) - arr.get(i) == d &&
+                    arr.get(p) - arr.get(j) == d) {
+                    count++;
+                }
+
+            }
+        }
+    }
+
+    return count;
+}
+
